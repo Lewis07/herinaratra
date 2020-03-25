@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facture</title>
+	<meta charset="utf-8">
+	<title>FACTURE BT</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jirama.css">
+</head>
+<body style="margin-left: 1%; margin-right: 1%;">
+
+	<div class="container">
+
+	<a href="<?php echo base_url()?>Factiora/consultFact" class="btn btn-danger" style="margin-top: 1%; margin-left: 1%;">Retour</a>
+	<button id="print" class="btn btn-primary" align="center" style="margin-top: 1%; margin-left: 1%;">Imprimer</button><br><br>
+
+	<div class="imprimena">
+	<table class="tab1">
+	
+		<tr>
+			<td class="pct" style="padding: 20px;">
+				<div class="img">
+       			 <img id="logo" src="img/logo_jirama.jpg" class="img" alt="logo JIRAMA"/>
+       			</div>
+   			</td>
+
+			<td class="pct2"></td>
+
+			<td class="pct3" style="line-height: 1,1em;">
+				149, RUE RAINANDRIAMAMPANDRY ANTANANARIVO </br>BP.: 200</br>NIF 1 000 000 704</br>STATISTIQUE N°36003 11 1957 9 10005</br>RCS 2004 8 00 553
+			</td>
+
+			<td class="pct4" style="line-height: 1.1;">
+
+			<b>DOIT :</b> <label name="doi"><?php echo set_value("doi",$consultFact->nom);?></label></br>
+
+			Adresse: <label name="adr"><?php echo set_value("adr",$consultFact->addresse);?></label></br>
+
+			Référence client: 
+			<label name="zon"><?php echo set_value("zon",$consultFact->zone);?></label>
+			<label name="tou"><?php echo set_value("tou",$consultFact->tourne);?></label>
+			<label name="car"><?php echo set_value("car",$consultFact->carnet);?></label>
+			<label name="cmp"><?php echo set_value("cmp",$consultFact->compte);?></label>
+			
+			    Réf. Enc:  <label name="sc"><?php echo set_value("sc",$consultFact->sous_compte);?></label></br>
+				Catégorie:  <label name="lib"><?php echo set_value("lib",$consultFact->libelle_cat);?></label>  Zone de Surtaxe:   <label name="y"><?php echo set_value("t",$consultFact->codeTVA);?></label>  
+				Code TVA:  <label name="t"><?php echo set_value("y",$consultFact->ZoneSTX);?></label>
+			</td>
+		</tr>	
+
+	</table>
+	<p></p>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td rowspan="3" class="pct5" style="letter-spacing:-1.5px;">FACTURE N° FAC</td>
+			<td  class="pct6" style="text-align: center;"><b>ELECTRICITE</b></td>
+			<td  class="pct7"style="text-align: center;"><b>EAU</b></td>
+		</tr>
+		<tr style="line-height: 1;">
+			<td rowspan="3" class="pct55">Compteur n°   <label name="g"><?php echo set_value("g",$consultFact->numCompteur);?></label>         Tarif:  <label name="tar"><?php echo set_value("tar",$consultFact->PU_tarif_elec);?></label>              PS(kW): <label name="ps"><?php echo set_value("ps",$consultFact->PS);?></label></td>
+			<td  class="pct66">Compteur n°            Tarif:                (mm):</td>
+		</tr>
+	</table>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td rowspan="4" class="pct12" style="line-height: 1.1;letter-spacing:-1.1px;">Mois de:</br>Date d'édition:</br>Date de présentation:</td>
+			<td class="pct13"></td>
+			<td class="pct14" style="text-align: center;">Date</td>
+			<td class="pct15" style="text-align: center;">Index</td>
+			<td class="pct16"></td>
+			<td class="pct17" style="text-align: center;">Date</td>
+			<td class="pct18" style="text-align: center;">Index</td>
+		</tr>
+		<tr style="line-height: 1;">
+			<td class="pct122">Nouvel Index</td>
+
+			<td rowspan="2" class="pct14"> 
+				<label name="o"><?php echo set_value("o",$consultFact->dateNI);?></label><br>
+				<label name="o"><?php echo set_value("o",$consultFact->dateAI);?></label>
+			</td>
+
+			<td rowspan="2" class="pct14"> 
+				<label name="P"><?php echo set_value("P",$consultFact->nouvelleIndexElec);?></label><br>
+				<label name="z"><?php echo set_value("z",$consultFact->ancienIndexElec);?></label>
+			</td>
+			<td class="pct15">Nouvel Index</td>
+			<td rowspan="2" class="pct16"> 
+				<label name="o"><?php echo set_value("o",$consultFact->dateNI);?></label><br>
+				<label name="o"><?php echo set_value("o",$consultFact->dateAI);?></label>
+			</td>
+			<td rowspan="2"class="pct17">
+				<label name="P"><?php echo set_value("P",$consultFact->nouvelleIndexEau);?></label><br>
+				<label name="z"><?php echo set_value("z",$consultFact->ancienIndexEau);?></label>
+			</td>
+		</tr>
+		<tr style="line-height: 1;">
+			<td class="pct122">Ancien Index</td>
+			<td class="pct13">Ancien Index</td>
+		</tr>
+	</table>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td rowspan="3" class="pct12" style="line-height: 1.1;letter-spacing:-1.1px;">Date limite de paiement:</br>Agence:</br>Téléphone:</td>
+			<td class="pct66" style="line-height: 1.1;">Consommation totale:  <label name="consElec"><?php echo set_value("consElec",$consultFact->consommationElec);?></label></br>
+
+			Nombre de jours de consommation: <label name="nbj"><?php echo set_value("nbj",$consultFact->consNbJr);?></label><br>
+			Coefficient de tranche: <label name="coef"><?php echo set_value("coef",$consultFact->coefDeTranche);?></label></td>
+
+			<td class="pct66" style="line-height: 1.1;">
+			Consommation totale: <label name="consEau"><?php echo set_value("consEau",$consultFact->consommationEau);?></label></br>
+			Nombre de jours de consommation:</br>Coefficient de tranche:  </td>
+		</tr>
+		<tr>
+			<td rowspan="3" class="pct6"></td>
+			<td  class="pct7"></td>
+		</tr>
+	</table>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td class="pct12" style="letter-spacing:-1.1px;">E-mail:</td>
+			<td class="pct13" style="text-align: center;">Quantité(kWh)</td>
+			<td class="pct14" style="text-align: center;">Prix Unitaire(Ar)</td>
+			<td class="pct15" style="text-align: center;">Montant(Ar)</td>
+			<td class="pct16" style="text-align: center;">Quantité (m<sup>3</sup>)</td>
+			<td class="pct17" style="text-align: center;">Prix Unitaire(Ar)</td>
+			<td class="pct18" style="text-align: center;">Montant(Ar)</td>
+		</tr>
+		<tr style="line-height: 1;">
+			<td rowspan="3" class="pct12" style="line-height: 1;">1ére Tranche de Consommation</br>
+			2ére Tranche de Consommation</br>Redevance : </br>Prime fixe</br>Autre frais</td>
+			<td class="pct13">
+				<label name="prem"><?php echo set_value("prem",$consultFact->premTranche);?></label><br>
+				<label name="deux"><?php echo set_value("deux",$consultFact->deuxiemeTranche);?></label><br>
+				<br><br><br>
+			</td>
+			<td class="pct14">
+				
+				<label name="prixPrem"><?php echo set_value("prixPrem",$consultFact->prixPrem);?>,00</label><br>
+				<label name="prixDeux"><?php echo set_value("prixDeux",$consultFact->prixDeux);?>,00</label><br>
+				<br><br><br>
+			</td>
+			<td class="pct15">
+				
+				<label name="montPre"><?php echo set_value("montPre",$consultFact->MontantPrem);?>,00</label><br>
+				<label name="monDeux"><?php echo set_value("monDeux",$consultFact->MontantDeux);?>,00</label><br>
+				<label name="red"><?php echo set_value("red",$consultFact->redevance);?>,00</label>
+				<br><br><br>
+			</td>
+			<td class="pct16"></td>
+			<td class="pct17">
+				
+			</td>
+			<td class="pct18"></td>
+		</tr>
+	</table>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td rowspan="3" class="pct12" style="text-align: center;"><b>Sous total JIRAMA</b></td>
+			<td class="pct21"></td>
+			<td class="pct15"> <label name="sousTotJira"><?php echo set_value("sousTotJira",$consultFact->SousTotalJirama);?>,00</label></td>
+			<td class="pct21"></td>
+			<td class="pct15"></td>
+		</tr>
+	</table>
+	<table class="tab3">
+		<tr style="line-height: 1;">
+			<td class="pct12" style="line-height: 1;">Taxe communale </br>Surtaxe communale</br>Redevance Fonds National pour l'Electricité</br>Redevance Assainissement Eaux usées</br>TVA</td>
+			<td class="pct13">
+
+			</td>
+			<td class="pct14"></td>
+			<td class="pct15">
+				<label name="tax"><?php echo set_value("tax",$consultFact->taxeCommunal);?></label><br>
+				<label name="surtax"><?php echo set_value("surtax",$consultFact->surTax);?></label><br>
+				<label name="redFond"><?php echo set_value("redFond",$consultFact->RedevFond);?></label><br>
+				<br><br><br>
+			</td>
+			<td class="pct21"></td>
+			<td class="pct15"></td>
+		</tr>
+		<tr style="line-height: 1;">
+			<td class="pct12" style="text-align: center;letter-spacing:-1.5px;"><b>Sous total Etat et Services Publics</b></td>
+			<td class="pct13"></td>
+			<td class="pct14"></td>
+			<td class="pct15">
+				<label name="Etat"><?php echo set_value("Etat",$consultFact->SousTotalEtat);?>,00</label><br>
+			</td>
+			<td class="pct21"></td>
+			<td class="pct15"></td>
+		</tr>
+		<tr>
+			<td class="pct12" style="text-align: center;line-height: 1;"><b>TOTAL</b></td>
+			<td class="pct13"></td>
+			<td class="pct14"></td>
+			<td class="pct15">
+				<label name="Total"><?php echo set_value("Total",$consultFact->Total);?></label><br>
+			</td>
+			<td class="pct21"></td>
+			<td class="pct15"></td>
+		</tr>
+	</table>
+	<table class="tab4">
+		<tr>
+			<td class="pct22" style="text-decoration: underline;"><i><b>Arrété à la somme de:</b></i></td>
+			<td class="pct23" style="text-align: center;letter-spacing:-1.1px;">Directeur Interrégional Toliara</td>
+		</tr>
+	</table>
+	<p style="text-indent: 100px;line-height: 0.1;">
+		<b>........................................................................................................................................................................................................................................................................................................................</b>
+	</p>
+	<table class="tab5">
+		<tr>
+			<td class="pct" style="padding: 20px;"><div class="img">
+       			 <img id="logo" src="<?php echo base_url('assets/img/logo_jirama.jpg" class="img'); ?>" alt="logo JIRAMA"/>
+       			</div></td>
+			<td class="pct2"></td>
+			<td class="pct33" style="letter-spacing:-1.1px;"><b>FACTURE N°</b> Mois de:</br>Agence: Catégorie:</br>Référence client: Réf. Enc:</td>
+			<td class="pct44" style="letter-spacing:-1.1px;">Total à payer Electricité:</br>Total à payer Eau:</br><b>NET A PAYER : Ariary </b></td>
+		</tr>	
+	</table>
+    </div>
+    </div>
+ 
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/printThis.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+		
+			$('#print').on('click',function(){
+
+			// 	alert("coucou");
+
+				$('.imprimena').printThis({
+					debug: false,               // show the iframe for debugging
+				    importCSS: true,            // import parent page css
+				    importStyle: false,         // import style tags
+				    printContainer: true,       // print outer container/$.selector
+				    loadCSS: ["file:///C:/Documents and Settings/Administrateur/Bureau/herinaratra/jira print/css/jirama.css","file:///C:/Documents and Settings/Administrateur/Bureau/herinaratra/jira print/css/bootstrap.min.css"],                // path to additional css file - use an array [] for multiple
+				    pageTitle: "Facture",              // add title to print page
+				    removeInline: false,        // remove inline styles from print elements
+				    removeInlineSelector: "*",  // custom selectors to filter inline styles. removeInline must be true
+				    printDelay: 333,            // variable print delay
+				    header: "",               // prefix to html
+				    footer: null,               // postfix to html
+				    base: false,                // preserve the BASE tag or accept a string for the URL
+				    formValues: true,           // preserve input/form values
+				    canvas: false,              // copy canvas content
+				    doctypeString: '...',       // enter a different doctype for older markup
+				    removeScripts: false,       // remove script tags from print content
+				    copyTagClasses: false,      // copy classes from the html & body tag
+				    beforePrintEvent: null,     // function for printEvent in iframe
+				    beforePrint: null,          // function called before iframe is filled
+				    afterPrint: null  
+				});
+			});
+		});
+
+	</script>
+</body>
+</html>

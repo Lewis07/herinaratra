@@ -1,0 +1,103 @@
+table.tab1{
+			border-collapse: collapse;
+			width: 100%; 
+			height: 60px;
+			}
+		table.tab2{
+			border-collapse: collapse;
+			width: 100%; 
+			}
+		table.tab3{
+			border-collapse: collapse;
+			width: 100%; 
+			}
+		table.tab4{
+			border-collapse: collapse;
+			width: 100%; 
+			height: 50px;
+			}
+		table.tab5{
+			border-collapse: collapse;
+			width: 100%; 
+			height: 80px;
+			}
+		td{
+			border: 2px solid black;
+		}
+		.pct{
+			width: 8%;
+		}
+		.pct2{
+			width: 1%;
+		}
+		.pct3{
+			width: 31%;
+		}
+		.pct4{
+			width: 60%;
+		}
+		.pct5{
+			width: 20%;
+		}
+		.pct6{
+			width: 40%;
+			background-color: rgb(255,135,0);
+			height: 15px;
+		}
+		.pct7{
+			width: 40%;
+			background-color: rgb(0,0,170);
+			height: 15px;
+		}
+		.pct55{
+			width: 20%;
+		}
+		.pct66{
+			width: 40%;
+		}
+		.pct77{
+			width: 40%;
+		}
+		.pct12{
+			width: 20%;
+		}
+		.pct13{
+			width: 14%;
+		}
+		.pct122{
+			width: 14%;
+		}
+		.pct14{
+			width: 13%;
+		}
+		.pct15{
+			width: 13%;
+		}
+		.pct16{
+			width: 14%;
+		}
+		.pct17{
+			width: 13%;
+		}
+		.pct18{
+			width: 13%;
+		}
+		.pct21{
+			width: 27%;
+		}
+		.pct22{
+			width: 80%;
+		}
+		.pct23{
+			width: 20%;
+		}
+		.pct33{
+			width: 46%;
+		}
+		.pct44{
+			width: 45%;
+		}
+		.img{
+			width: 75px;
+  			height: 65px;
+		}
